@@ -126,3 +126,7 @@ def get_planets():
         )
         planets.append(planet)
     return planets
+
+species = get_species()
+for specie in species:
+    print(specie)
