@@ -8,4 +8,4 @@ class Pelicula:
 
     def __str__(self):
         return f'Titulo: {self.titulo}\nEpisodio: {self.episodio}\nFecha de lanzamiento: {self.fecha_lanzamiento}\n' \
-               f'Texto inicial: {self.texto_inicial}\nDirector: {self.director}'
+            f'Texto inicial: {self.texto_inicial}\nDirector: {self.director}'

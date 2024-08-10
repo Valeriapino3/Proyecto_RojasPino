@@ -11,5 +11,5 @@ class Nave:
 
     def _str_(self):
         return f"---------------------Nave---------------------\n" \
-               f"Nombre: {self.nombre}\nLongitud: {self.longitud}\nCapacidad de carga: {self.capacidad_carga}\n" \
-               f"Clasificacion del hiperimpulsor: {self.clasificacion_hiperimpulsor}\nMGLT: {self.MGLT}"
+            f"Nombre: {self.nombre}\nLongitud: {self.longitud}\nCapacidad de carga: {self.capacidad_carga}\n" \
+            f"Clasificacion del hiperimpulsor: {self.clasificacion_hiperimpulsor}\nMGLT: {self.MGLT}"
