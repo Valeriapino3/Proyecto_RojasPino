@@ -1,7 +1,6 @@
 import requests
-from Especies import Especies
+from Especie import Especie
 from Pelicula import Pelicula
-
 
 BASEURL = "https://www.swapi.tech/api/"
 
@@ -19,3 +18,4 @@ def get_films():
         film = Pelicula(properties["title"], properties["episode_id"],properties['release_date'], properties["opening_crawl"], properties["director"])
         films.append(film)
     return films
+
