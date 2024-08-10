@@ -1,5 +1,5 @@
 import requests
-from Especies import Especies
+from Especie import Especie
 from Pelicula import Pelicula
 
 
