@@ -60,3 +60,32 @@ def comparar_naves():
 
 
 comparar_naves()
+
+def tabla_estadisticas_naves():
+    #Para cargar los datos de las naves 
+    datos_naves=pd.read_csv("starwars (1)/csv/starships.csv")
+    
+    #Agrupar los datos por clase de nave 
+    grouped_naves=datos_naves.groupby("starship_class")
+    
+    #Calcular estadísticas 
+    summary = grouped_naves.agg({
+        'hyperdrive_rating': ['mean', 'max', 'min', lambda x: x.mode().iloc[0] if not x.mode().empty else None],
+        'MGLT': ['mean', 'max', 'min', lambda x: x.mode().iloc[0] if not x.mode().empty else None],
+        'max_atmosphering_speed': ['mean', 'max', 'min', lambda x: x.mode().iloc[0] if not x.mode().empty else None],
+        'cost_in_credits': ['mean', 'max', 'min', lambda x: x.mode().iloc[0] if not x.mode().empty else None]
+    })
+    
+    #Renombrar las columnas 
+    summary.columns = ['_'.join(col).strip() for col in summary.columns.values]
+    summary.rename(columns={
+        'hyperdrive_rating_<lambda_0>': 'hyperdrive_rating_mode',
+        'MGLT_<lambda_0>': 'MGLT_mode',
+        'max_atmosphering_speed_<lambda_0>': 'max_atmosphering_speed_mode',
+        'cost_in_credits_<lambda_0>': 'cost_in_credits_mode'
+    }, inplace=True)
+              
+    # Mostrar la tabla resumen
+    print(summary)
+
+tabla_estadisticas_naves()
