@@ -1,5 +1,5 @@
 class Pelicula:
-    def _init_(self, titulo, episodio, fecha_lanzamiento, texto_inicial, director):
+    def __init__(self, titulo, episodio, fecha_lanzamiento, texto_inicial, director):
         self.titulo = titulo
         self.episodio = episodio
         self.fecha_lanzamiento = fecha_lanzamiento
@@ -9,7 +9,7 @@ class Pelicula:
     def get_titulo(self):
         return self.titulo
 
-    def _str_(self):
+    def __str__(self):
         return f""" ///PELICULAS DE STAR WARS///
 Título: {self.titulo}
 Episodio: {self.episodio}

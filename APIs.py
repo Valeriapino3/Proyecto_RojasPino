@@ -1,6 +1,8 @@
 import requests
 from Especie import Especie
 from Pelicula import Pelicula
+from Planeta import Planeta
+from Personaje import Personaje
 
 BASEURL = "https://swapi.dev/api/"
 
@@ -50,3 +52,46 @@ def cargar_especies():
 especies = cargar_especies()
 for especie in especies:
     print(especie)
+
+def cargar_planetas():
+    planets_data = cargar_datos("planets/")
+    if planets_data:
+        planets_list = []
+        for planet_item in planets_data["results"]:
+            planet = Planeta(
+                planet_item["name"],
+                planet_item["orbital_period"],
+                planet_item["rotation_period"],
+                planet_item["population"],
+                planet_item["climate"],
+                planet_item["films"],
+                planet_item["residents"]
+            )
+            planets_list.append(planet)
+        return planets_list
+
+
+# planetas = cargar_planetas()
+# for planeta in planetas:
+#     print(planeta)
+
+def cargar_personajes():
+    personajes_data = cargar_datos("people/")
+    if personajes_data:
+        personajes_list = []
+        for personaje_item in personajes_data["results"]:
+            personaje = Personaje(
+                personaje_item["name"],
+                personaje_item["homeworld"],
+                personaje_item["films"],
+                personaje_item["gender"],
+                personaje_item["species"],
+                personaje_item["starships"],
+                personaje_item["vehicles"]
+            )
+            personajes_list.append(personaje)
+        return personajes_list
+
+personajes = cargar_personajes()
+for personaje in personajes:
+    print(personaje)

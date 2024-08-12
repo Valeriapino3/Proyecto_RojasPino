@@ -1,7 +1,7 @@
 import requests
 
 class Especie:
-    def _init_(self, nombre, altura, clasificacion, planeta_origen, lengua_materna, personajes, peliculas):
+    def __init__(self, nombre, altura, clasificacion, planeta_origen, lengua_materna, personajes, peliculas):
         self.nombre = nombre
         self.altura = altura
         self.clasificacion = clasificacion
@@ -41,7 +41,7 @@ class Especie:
         return film_titles
 
 
-    def _str_(self):
+    def __str__(self):
         homeworld_name = self.cargar_planeta()
         character_names = self.cargar_nombres_personajes()
         film_titles = self.cargar_titulo_pelicula()
