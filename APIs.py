@@ -28,9 +28,9 @@ def cargar_peliculas():
             films.append(film)
         return films
 
-peliculas = cargar_peliculas()
-for pelicula in peliculas:
-    print(pelicula)
+# peliculas = cargar_peliculas()
+# for pelicula in peliculas:
+#     print(pelicula)
 
 def cargar_especies():
     species_data = cargar_datos("species/")
@@ -49,9 +49,9 @@ def cargar_especies():
             species_list.append(species)
         return species_list
 
-especies = cargar_especies()
-for especie in especies:
-    print(especie)
+# especies = cargar_especies()
+# for especie in especies:
+#     print(especie)
 
 def cargar_planetas():
     planets_data = cargar_datos("planets/")
@@ -71,9 +71,9 @@ def cargar_planetas():
         return planets_list
 
 
-planetas = cargar_planetas()
-for planeta in planetas:
-    print(planeta)
+# planetas = cargar_planetas()
+# for planeta in planetas:
+#     print(planeta)
 
 def cargar_personajes():
     personajes_data = cargar_datos("people/")
@@ -92,6 +92,29 @@ def cargar_personajes():
             personajes_list.append(personaje)
         return personajes_list
 
-personajes = cargar_personajes()
-for personaje in personajes:
-    print(personaje)
+
+# personajes = cargar_personajes()
+# for personaje in personajes:
+#     print(personaje)
+
+
+
+def buscar_personajes():
+    # Pedirle al usuario que escriba el nombre o una letra del nombre del personaje
+    nombre_o_letra = input("Escribe el nombre o una letra del nombre del personaje: ").strip().lower()
+
+    # Cargar los personajes
+    personajes = cargar_personajes()
+
+    # Filtro
+    personajes_filtrados = [personaje for personaje in personajes if nombre_o_letra in personaje.nombre.lower()]
+
+    # Mostrar los personajes
+    if personajes_filtrados:
+        for personaje in personajes_filtrados:
+            print(personaje)
+    else:
+        print("No se encontraron personajes con ese nombre o letra.")
+
+
+buscar_personajes()
