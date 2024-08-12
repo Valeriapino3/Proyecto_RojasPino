@@ -28,9 +28,9 @@ def cargar_peliculas():
             films.append(film)
         return films
 
-# peliculas = cargar_peliculas()
-# for pelicula in peliculas:
-#     print(pelicula)
+peliculas = cargar_peliculas()
+for pelicula in peliculas:
+    print(pelicula)
 
 def cargar_especies():
     species_data = cargar_datos("species/")
@@ -71,9 +71,9 @@ def cargar_planetas():
         return planets_list
 
 
-# planetas = cargar_planetas()
-# for planeta in planetas:
-#     print(planeta)
+planetas = cargar_planetas()
+for planeta in planetas:
+    print(planeta)
 
 def cargar_personajes():
     personajes_data = cargar_datos("people/")
