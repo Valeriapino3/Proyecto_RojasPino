@@ -25,7 +25,6 @@ def personajes_por_planeta():
     plt.xticks(rotation=90)
     plt.show()
 
-personajes_por_planeta()
 
 def comparar_naves():
     # Cargar el archivo csv starships
@@ -58,9 +57,6 @@ def comparar_naves():
     plt.tight_layout()
     plt.show()
 
-
-comparar_naves()
-
 def tabla_estadisticas_naves():
     #Para cargar los datos de las naves 
     datos_naves=pd.read_csv("starwars (1)/csv/starships.csv")
@@ -88,4 +84,26 @@ def tabla_estadisticas_naves():
     # Mostrar la tabla resumen
     print(summary)
 
-tabla_estadisticas_naves()
+
+def menu_principal():
+    while True:
+        print("\n/// Compara el mundo de STAR WARS! ///")
+        print("1. Mostrar cantidad de personajes por planeta")
+        print("2. Comparar naves")
+        print("3. Mostrar tabla de estadísticas de naves")
+        print("4. Salir")
+
+        opcion = input("Ingrese el número de la opción que desea ejecutar: ")
+        while opcion not in ["1", "2", "3", "4"]:
+            print("Opción no válida. Intente de nuevo.")
+            opcion = input("Ingrese el número de la opción que desea ejecutar: ")
+
+        if opcion == "1":
+            personajes_por_planeta()
+        elif opcion == "2":
+            comparar_naves()
+        elif opcion == "3":
+            tabla_estadisticas_naves()
+        elif opcion == "4":
+            break
+

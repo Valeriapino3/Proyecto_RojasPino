@@ -1,16 +1,29 @@
-# This is a sample Python script.
+from Misiones import menu_principal
+from estadisticas import menu_principal
+from APIs import menu_principal
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+def menu_general():
+    while True:
+        print("\n/// En una galaxia muy lejana... ///")
+        print("1. Misiones")
+        print("2. Estadísticas")
+        print("3. APIs")
+        print("4. Salir")
+
+        opcion = input("Ingrese el número de la opción que desea ejecutar: ")
+        while opcion not in ["1", "2", "3", "4"]:
+            print("Opción no válida. Intente de nuevo.")
+            opcion = input("Ingrese el número de la opción que desea ejecutar: ")
+
+        if opcion == "1":
+            menu_principal()
+        elif opcion == "2":
+            menu_principal()
+        elif opcion == "3":
+            menu_principal()
+        elif opcion == "4":
+            print("Que la fuerza te acompañe...")
+            exit()
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+menu_general()

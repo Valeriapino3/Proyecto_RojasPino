@@ -28,9 +28,7 @@ def cargar_peliculas():
             films.append(film)
         return films
 
-# peliculas = cargar_peliculas()
-# for pelicula in peliculas:
-#     print(pelicula)
+
 
 def cargar_especies():
     species_data = cargar_datos("species/")
@@ -49,9 +47,7 @@ def cargar_especies():
             species_list.append(species)
         return species_list
 
-# especies = cargar_especies()
-# for especie in especies:
-#     print(especie)
+
 
 def cargar_planetas():
     planets_data = cargar_datos("planets/")
@@ -71,9 +67,7 @@ def cargar_planetas():
         return planets_list
 
 
-# planetas = cargar_planetas()
-# for planeta in planetas:
-#     print(planeta)
+
 
 def cargar_personajes():
     personajes_data = cargar_datos("people/")
@@ -91,11 +85,6 @@ def cargar_personajes():
             )
             personajes_list.append(personaje)
         return personajes_list
-
-
-# personajes = cargar_personajes()
-# for personaje in personajes:
-#     print(personaje)
 
 
 
@@ -117,4 +106,41 @@ def buscar_personajes():
         print("No se encontraron personajes con ese nombre o letra.")
 
 
-buscar_personajes()
+def menu_principal():
+    while True:
+        print("\n/// Conoce el mundo de STAR WARS ! ///")
+        print("1. Mostrar peliculas")
+        print("2. Mostrar especies")
+        print("3. Mostrar planetas")
+        print("4. Buscar personajes")
+        print("5. Salir")
+        opcion = input("Seleccione una opción: ")
+        while opcion not in ['1', '2', '3', '4', '5']:
+            print("Opción no válida.")
+            opcion = input("Seleccione una opción: ")
+        if opcion == '1':
+            peliculas = cargar_peliculas()
+            if peliculas:
+                for pelicula in peliculas:
+                    print(pelicula)
+            else:
+                print("No se encontraron películas.")
+        elif opcion == '2':
+            especies = cargar_especies()
+            if especies:
+                for especie in especies:
+                    print(especie)
+            else:
+                print("No se encontraron especies.")
+        elif opcion == '3':
+            planetas = cargar_planetas()
+            if planetas:
+                for planeta in planetas:
+                    print(planeta)
+            else:
+                print("No se encontraron planetas.")
+        elif opcion == '4':
+            buscar_personajes()
+        elif opcion == '5':
+            break
+

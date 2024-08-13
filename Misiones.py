@@ -176,7 +176,7 @@ def modificar_mision():
 # Menú principal
 def menu_principal():
     while True:
-        print("\n/// MENÚ PRINCIPAL ///")
+        print("\n/// SISTEMA DE MISIONES ///")
         print("1. Crear misión")
         print("2. Ver misiones")
         print("3. Modificar misión")
@@ -184,6 +184,10 @@ def menu_principal():
         print("5. Cargar misiones")
         print("6. Salir")
         opcion = input("Seleccione una opción: ")
+        while opcion not in ['1', '2', '3', '4', '5', '6']:
+            print("Opción no válida.")
+            opcion = input("Seleccione una opción: ")
+
         if opcion == '1':
             crear_mision()
         elif opcion == '2':
@@ -196,7 +200,4 @@ def menu_principal():
             cargar_misiones()
         elif opcion == '6':
             break
-        else:
-            print("Opción no válida. Intente de nuevo.")
 
-menu_principal()
