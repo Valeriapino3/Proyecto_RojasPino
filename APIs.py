@@ -21,9 +21,9 @@ def cargar_peliculas():
             film = Pelicula(
                 film_data["title"],
                 film_data["episode_id"],
-                film_data["director"],
-                film_data["producer"],
-                film_data["release_date"]
+                film_data["release_date"],
+                film_data["opening_crawl"],
+                film_data["director"]
             )
             films.append(film)
         return films
