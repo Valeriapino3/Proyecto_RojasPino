@@ -106,7 +106,7 @@ def buscar_personajes():
         print("No se encontraron personajes con ese nombre o letra.")
 
 
-def menu_principal():
+def menu_principal_API():
     while True:
         print("\n/// Conoce el mundo de STAR WARS ! ///")
         print("1. Mostrar peliculas")

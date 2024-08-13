@@ -38,7 +38,7 @@ def comparar_naves():
     datos_naves.set_index("name", inplace=True)
 
     # Crear un gráfico con 4 subplots, uno para cada característica de las naves
-    plt.figure(figsize=(14, 8))
+    fig, axes = plt.subplots(nrows=2, ncols=2, figsize=(14, 10))
     plt.subplots_adjust(left=0.1, right=0.9, top=0.9, bottom=0.3)
 
     # Crear los subplots
@@ -52,7 +52,7 @@ def comparar_naves():
     for ax in axes.flat:
         ax.set_xlabel("Naves")
         ax.set_ylabel("Valor")
-        ax.set_xticklabels(ax.get_xticklabels(), rotation=90)
+        ax.set_xticklabels(ax.get_xticklabels(), rotation=90, fontsize=8)
 
     plt.tight_layout()
     plt.show()
@@ -85,7 +85,7 @@ def tabla_estadisticas_naves():
     print(summary)
 
 
-def menu_principal():
+def menu_principal_estadisticas():
     while True:
         print("\n/// Compara el mundo de STAR WARS! ///")
         print("1. Mostrar cantidad de personajes por planeta")

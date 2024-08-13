@@ -174,7 +174,7 @@ def modificar_mision():
         print("Número de misión no válido.")
 
 # Menú principal
-def menu_principal():
+def menu_principal_misiones():
     while True:
         print("\n/// SISTEMA DE MISIONES ///")
         print("1. Crear misión")

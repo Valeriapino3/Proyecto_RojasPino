@@ -1,6 +1,6 @@
-from Misiones import menu_principal
-from estadisticas import menu_principal
-from APIs import menu_principal
+from Misiones import menu_principal_misiones
+from estadisticas import menu_principal_estadisticas
+from APIs import menu_principal_API
 
 def menu_general():
     while True:
@@ -16,11 +16,11 @@ def menu_general():
             opcion = input("Ingrese el número de la opción que desea ejecutar: ")
 
         if opcion == "1":
-            menu_principal()
+            menu_principal_misiones()
         elif opcion == "2":
-            menu_principal()
+            menu_principal_estadisticas()
         elif opcion == "3":
-            menu_principal()
+            menu_principal_API()
         elif opcion == "4":
             print("Que la fuerza te acompañe...")
             exit()
